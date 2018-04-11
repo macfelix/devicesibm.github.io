@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+    <!-- CSS for Carbon Design -->
+    <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+    <!-- CSS for IBM Plex fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,300i,400,400i,600,600i|IBM+Plex+Sans+Condensed:300,300i,400,400i,600,600i|IBM+Plex+Sans:300,300i,400,400i,600,600i|IBM+Plex+Serif:300,300i,400,400i,600,600i" rel="stylesheet">  -->
+    <!-- Style for Cloud Header Bar-->
+    <style type="text/css">
+      .bx--cloud-header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      background-color: #152935;
+      color: #fff;
+      height: 3rem;
+      width: 100%; }
+
+      .bx--cloud-header__wrapper,
+      .bx--cloud-header-brand {
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; }
+
+      .bx--cloud-header__app-menu {
+        font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: 0.5px;
+        display: inline-block;
+        background: none;
+        -webkit-appearance: none;
+          -moz-appearance: none;
+                appearance: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        width: 100%;
+        box-sizing: content-box;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding: 0 1.5rem;
+        height: 100%;
+        width: 1rem; }
+        .bx--cloud-header__app-menu::-moz-focus-inner {
+          border: 0; }
+        .bx--cloud-header__app-menu svg {
+          fill: #5596e6;
+          width: 1rem;
+          height: 1rem; }
+        .bx--cloud-header__app-menu:focus {
+          outline: 1px solid #3d70b2; }
+
+      .bx--cloud-header-brand {
+        text-decoration: none;
+        color: #fff;
+        transition: color 250ms cubic-bezier(0.5, 0, 0.1, 1);
+        padding-right: 1rem; }
+        .bx--cloud-header-brand:hover, .bx--cloud-header-brand:focus {
+          color: #5596e6; }
+        .bx--cloud-header-brand:focus {
+          outline: 1px solid #3d70b2; }
+
+      .bx--cloud-header-brand--no-menu {
+        padding-left: 1.5rem; }
+
+      .bx--cloud-header-brand__icon {
+        height: 2rem;
+        width: 2rem;
+        margin-right: 0.625rem; }
+
+      .bx--cloud-header-brand__text {
+        font-weight: 400; }
+        .bx--cloud-header-brand__text span {
+          font-weight: 600; }
+
+      .bx--cloud-header-list {
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        list-style: none;
+        padding: 0; }
+
+      .bx--cloud-header-list__item {
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        position: relative; }
+
+      .bx--cloud-header-list__item--icon {
+        padding: 0; }
+
+      .bx--cloud-header-list__link {
+        font-size: 0.875rem;
+        padding: 0 1rem;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        font-weight: 400;
+        color: #fff;
+        text-decoration: none;
+        transition: color 250ms cubic-bezier(0.5, 0, 0.1, 1); }
+        .bx--cloud-header-list__link:hover, .bx--cloud-header-list__link:focus {
+          color: #5596e6; }
+        .bx--cloud-header-list__link:focus {
+          outline: 1px solid #3d70b2; }
+
+      .bx--cloud-header-list__btn {
+        font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: 0.5px;
+        display: inline-block;
+        background: none;
+        -webkit-appearance: none;
+          -moz-appearance: none;
+                appearance: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        height: 100%;
+        padding: 0 1rem; }
+        .bx--cloud-header-list__btn::-moz-focus-inner {
+          border: 0; }
+        .bx--cloud-header-list__btn svg {
+          fill: #fff;
+          height: 1rem;
+          width: 1rem;
+          transition: fill 250ms cubic-bezier(0.5, 0, 0.1, 1); }
+        .bx--cloud-header-list__btn:hover svg,
+        .bx--cloud-header-list__btn:focus svg {
+          fill: #5596e6; }
+        .bx--cloud-header-list__btn:focus {
+          outline: 1px solid #3d70b2; }
+
+      .bx--cloud-header-list__btn .bx--cloud-header__user-icon {
+        height: 2rem;
+        width: 2rem; }
+    </style>
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Workstation Asset Management</title>
+  </head>
+  <body> 
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div> <!--remove this sample from CRA-->
+    <div id="header"></div>
+    <div id="content"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="node_modules/carbon-components/scripts/carbon-components.min.js"></script>
+    <script src="https://unpkg.com/carbon-components/scripts/carbon-components.min.js"></script> 
+    <script src="https://unpkg.com/carbon-components/umd/index.js"></script> 
+    <script src="/src/scripts/main.js"></script> 
+  </body>
+</html>

@@ -1,0 +1,318 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+	height: 100%;
+	font-size: 16px;
+	font-family: 'IBM-Plex-Sans', Hlevetica Neue, Arial, sans-serif; 
+}
+
+p {
+	line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.25em;
+}
+
+#header {
+	background-color: #f2f2f2; 
+	position: fixed; 
+	left: 0px; 
+	top: 0px; 
+	width: 100%; 
+	height: 48px; 
+	z-index: 9999; 
+	box-shadow: 0 6px 12px 0 rgba(0,0,0,0.25);
+}
+
+#content {
+	padding-top: 58px; 
+	padding-bottom: 10px; 
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0px;
+	background-color:#f2f2f2; 
+}
+
+.mail-svg {
+	width: 16px;
+	height: 16px; 
+	fill: white;
+}
+
+.mainMenu {
+	position: fixed;
+	top: 0px;
+	left: -310px;
+	min-height: 100%;
+	max-height: 100%;
+	height:100%;
+	width: 310px;
+	margin-top: 48px;
+	padding-bottom: 48px;
+	background-color: #3d70b2;
+	/*border-right: 2px solid #8c9ba5;*/
+	overflow: auto;
+	box-shadow: 0 6px 12px 0 rgba(0,0,0,0.4);
+	visibility: hidden;
+	transition: visibility 0.4s, left 0.2s cubic-bezier(0, 0, 0.25, 1) 0.1s;
+}
+
+.showMenuLeft {
+	left: 0px;
+	visibility: visible;
+	transition: visible 0.1s, left 0.2s cubic-bezier(0.25, 0, 1, 1);
+}
+
+.textCont {
+	opacity: 0;
+	visibility: hidden;
+	transition: visibility 0.15s, opacity 0.15s linear;	
+}
+
+.showtextCont {
+	opacity: 1;
+	visibility: visible;
+	transition: visibility 0.15s, opacity 0.15s linear 0.25s;	
+
+}
+
+.headerDropDown {
+	position:absolute;
+	top: 48px; 
+	right: 0px; 
+	min-height: 150px; 
+	min-width: 350px;  
+	padding: 10px;
+	background-color: #3d70b2;
+	border-left: 2px;
+	border-right: 2px;
+	border-bottom: 2px;
+	border-color: #8c9ba5;
+	border-style: solid;
+	color: white;
+	font-size: 6px;
+	opacity: 0;
+	visibility: hidden;
+	box-shadow: 0 6px 12px 0 rgba(0,0,0,0.25);
+	transition: visibility 0.2s, opacity 0.1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.headerDropProfile {
+	position:absolute;
+	top: 48px; 
+	right: 0px; 
+	min-height: 240px; 
+	min-width: 300px;  
+	padding: 10px;
+	background-color: #3d70b2;
+	border-left: 2px;
+	border-right: 2px;
+	border-bottom: 2px;
+	border-color: #8c9ba5;
+	border-style: solid;
+	color: white;
+	opacity: 0;
+	visibility: hidden;
+	box-shadow: 0 6px 12px 0 rgba(0,0,0,0.25);
+	transition: visibility 0.2s, opacity 0.1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showClass {
+	opacity: 1;
+	visibility: visible;
+	transition: visibility 0.2s, opacity 0.1s cubic-bezier(0.25, 0, 1, 1);
+}
+
+#mainMenu-body {
+	position: relative;
+	min-height: 100%; 
+	margin: 0px;
+}
+
+#mainMenu-footer {
+	position: relative;
+	width: 100%;
+	bottom: 48px;
+	left: 0px;
+	text-align: center;
+	height: 40px;
+	color: #152934; 
+	padding-top: 20px;
+	font-size: 12px;
+}
+
+#mainMenuPush {
+	height: 40px;
+}
+
+.mainMenu-MenuItemWrapper {
+	position: relative;
+	/*background-color: black;*/
+	width: 310px;
+	left: 0px /*to allow relative to be positioned element.*/
+}
+
+.mainMenu-MenuItem {
+	position: relative;
+	/*background-color: brown;*/
+	width: 310px;
+}
+
+.mainMenu-MenuItemName {
+	display: inline-block;
+	position: relative;
+	width: 310px;
+	height: 50px;
+	left: 0px;
+	padding-left: 20px;
+	padding-right: 10px;
+	padding-top: 20px;
+	padding-bottom: 6px;
+	/*background-color: green;*/
+}
+
+.mainMenu-MenuItemName-Span {
+	position: relative;
+	font-size: 16px;
+	font-weight: 300;
+	/*background-color: yellowgreen;*/
+}
+
+.mainMenu-MenuItemDrop {
+	display: inline-block;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	right: 10px;
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding-top: 12px;
+	padding-left: 14px;
+	border-radius: 50%;
+	background-color: #3d70b2;
+	transition: background-color .2s, color .1s cubic-bezier(0, 0, 0.25, 1);
+	transition-delay: .2s;	
+	/*background-color: black;*/
+}
+
+.mainMenu-MenuItemDrop:hover {
+	color: #152935;
+	background-color: #b3c9e5;
+	transition: background-color .2s, color .1s cubic-bezier(0, 0, 0.25, 1);
+	transition-delay: .2s;	
+}
+
+.mainMenu-SubMenuItemGroup {
+	position: relative;
+	width: 310px;
+	max-height: 0px;
+	overflow: hidden;
+	border-top: 2px solid #274872;
+	border-bottom: 2px solid #5485c4;
+	background-color: #004d99;
+	visibility: hidden;
+	transition: max-height .2s, visibility .1s cubic-bezier(0.25, 0, 1, 1);
+}
+
+.showSubmenu1 {
+	max-height: 40px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu2{
+	max-height: 80px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu3 {
+	max-height: 120px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu4 {
+	max-height: 160px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu5 {
+	max-height: 200px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu6 {
+	max-height: 240px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu7 {
+	max-height: 280px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu8 {
+	max-height: 300px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu9 {
+	max-height: 360px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.showSubmenu10 {
+	max-height: 400px;
+	visibility: visible;
+	transition: max-height .2s, visibility .1s cubic-bezier(0, 0, 0.25, 1);
+}
+
+.mainMenu-SubMenuItem {
+	position: relative;
+	display: inline-block;
+	width: 310px;
+	height: 40px;
+	padding-left: 40px;
+	padding-right: 10px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	/*background-color: orangered;*/
+}
+
+.mainMenu-SubMenuItem-Span {
+	position: relative;
+	font-size: 14px;
+	font-weight: 300;
+	/*background-color: darkred;*/
+}
+
+
+.mainMenu-Link > div {
+	color: white;
+	transition: background-color .2s, color .1s cubic-bezier(0, 0, 0.25, 1)	;
+}
+
+.mainMenu-Link > div:hover {
+	color: #152935;
+	background-color: #b3c9e5;
+	transition: background-color .2s, color .1s cubic-bezier(0, 0, 0.25, 1);
+	transition-delay: .2s;
+}
+
